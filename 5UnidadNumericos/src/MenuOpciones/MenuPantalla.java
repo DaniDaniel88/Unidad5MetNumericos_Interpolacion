@@ -1,6 +1,10 @@
 
 package MenuOpciones;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author Dni daniel
@@ -128,7 +132,7 @@ public class MenuPantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcularActionPerformed
-
+   
     }//GEN-LAST:event_jbCalcularActionPerformed
 
     private void ButtonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonReiniciarActionPerformed
