@@ -1,9 +1,6 @@
 package MenuOpciones;
-
 import java.util.ArrayList;
-
 import javax.swing.table.AbstractTableModel;
-
 public class TablaLagrange {
     
    private String cabecera[]={"i","X","F(x)"};
