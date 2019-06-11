@@ -1,4 +1,3 @@
-
 package MenuOpciones;
 
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ public class MenuPantalla extends javax.swing.JFrame {
     
     public MenuPantalla() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     
