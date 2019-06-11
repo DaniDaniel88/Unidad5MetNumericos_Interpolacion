@@ -1,7 +1,7 @@
 package MenuOpciones;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-public class TablaLagrange {
+public class TablaLagrange extends AbstractTableModel{
     
    private String cabecera[]={"i","X","F(x)"};
    private ArrayList<VariablesLagrange>lista;
@@ -23,7 +23,6 @@ public class TablaLagrange {
     public Object getValueAt(int fila, int columna) {
         //columna: 0= i, 1= X, 2= fx
        switch(columna){
-           
            case 0: return this.lista.get(fila).getI();
            case 1: return this.lista.get(fila).getX();
            case 2: return this.lista.get(fila).getFx();

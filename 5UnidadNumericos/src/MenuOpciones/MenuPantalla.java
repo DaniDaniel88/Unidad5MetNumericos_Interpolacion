@@ -123,11 +123,11 @@ public class MenuPantalla extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonReiniciar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtresultadoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtresultadoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonReiniciar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -135,7 +135,30 @@ public class MenuPantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcularActionPerformed
-   
+        try { 
+            
+            METLAGRANGE met = new METLAGRANGE();
+            int i = Integer.parseInt(this.txtgrado.getText());
+            if (i>=2 && i<=4) {
+            //double x=Double.parseDouble(this.inter.getText());
+            String categoria1 = (String) datoXCombo.getSelectedItem();
+            //convetir dato a int
+            int datoX = (int) Double.parseDouble(categoria1);
+            System.out.println("datoX: "+ datoX);
+            
+            ArrayList<VariablesLagrange> a=met.MetodoInterLagrange(i,datoX);
+            TablaLagrange m = new TablaLagrange(a);
+
+            //ModeloTablaL m=new ModeloTablaL(e);
+            this.Tablita1.setModel(m);
+            this.txtresultadoFinal.setText(met.resultado());
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Dato fuera del rango 2-4");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error al insertar dato, calcular de nuevo" + e);
+        }   
     }//GEN-LAST:event_jbCalcularActionPerformed
 
     private void ButtonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonReiniciarActionPerformed
